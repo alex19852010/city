@@ -48,9 +48,8 @@ int main() {
 
     
 
-    cout << "hello world";
-
-    cout << "footbal is the best play";
+    cout << "footbal is the best play and ukraine forever";
+    cout << "!!!!!!!!!!!!!!";
 
     return 0;
 }

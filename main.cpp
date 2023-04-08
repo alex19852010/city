@@ -46,11 +46,7 @@ int main() {
         cin >> regionN[i].sizeregion;
     }
 
-    for (int i = 0; i < amount_region; i++) {
-
-        cout << regionN[i].nameregion << endl;
-        cout << regionN[i].sizeregion << endl;
-    }
+    
 
     cout << "hello world";
 

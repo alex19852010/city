@@ -52,5 +52,7 @@ int main() {
         cout << regionN[i].sizeregion << endl;
     }
 
+    cout << "hello world";
+
     return 0;
 }

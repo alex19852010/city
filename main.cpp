@@ -40,16 +40,46 @@ int main() {
     cin >> amount_region;
     for (int i = 0; i < amount_region; i++) {
         regionN.push_back(region());
-        cout << "NameRegion: " << i+1 << endl;
+        cout << "Name region: " << i+1 << endl;
         cin >> regionN[i].nameregion;
-        cout << "SizeRegion: " << i+1 << endl;
+        cout << "Size region: " << i+1 << endl;
         cin >> regionN[i].sizeregion;
     }
 
-    
+    for(int i = 0; i < amount_region; i ++)
+    {
+        cout << regionN[i].nameregion << " region" << endl;
+        cout << "amount building: ";
+        cin >> amount_building;
+        for(int k = 0; k < amount_building; i ++)
+        {
+            regionN[i].buildingN.push_back(building());
+            cout << " name building: " << k + 1;
+            cin >> regionN[i].buildingN[k].namebuilding;
+            cout << "size building: " << k + 1 ;
+            cin >> regionN[i].buildingN[k].sizebuilding;
 
-    cout << "footbal is the best play and ukraine forever";
-    cout << "!!!!!!!!!!!!!!";
+        }
+
+    }
+
+    for(int i = 0; i < amount_region; i ++)
+    {
+       for(int g = 0; g < amount_building; g ++)
+       {
+           cout << regionN[i].buildingN[g].namebuilding << endl;
+
+       cout << "enter amount floors:";
+       cin >> amount_floor;
+          for(int j = 0; j < amount_floor; j ++)
+          {
+              regionN[i].buildingN[g].floorN.push_back(floor());
+              regionN[i].buildingN[g].floorN[j].namefloor = j + 1;
+          }
+       }
+    }
+
+
 
     return 0;
 }

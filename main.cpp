@@ -11,6 +11,7 @@ struct room {
 
 struct floor {
     int namefloor;
+    int height_floor;
     vector<room> roomN;
 };
 
@@ -51,13 +52,13 @@ int main() {
         cout << regionN[i].nameregion << " region" << endl;
         cout << "amount building: ";
         cin >> amount_building;
-        for(int k = 0; k < amount_building; i ++)
+        for(int g = 0; g < amount_building; g ++)
         {
             regionN[i].buildingN.push_back(building());
-            cout << " name building: " << k + 1;
-            cin >> regionN[i].buildingN[k].namebuilding;
-            cout << "size building: " << k + 1 ;
-            cin >> regionN[i].buildingN[k].sizebuilding;
+            cout << " name building: " << g + 1 << endl;
+            cin >> regionN[i].buildingN[g].namebuilding;
+            cout << "size building: " << g + 1 << endl;
+            cin >> regionN[i].buildingN[g].sizebuilding;
 
         }
 
@@ -67,19 +68,68 @@ int main() {
     {
        for(int g = 0; g < amount_building; g ++)
        {
-           cout << regionN[i].buildingN[g].namebuilding << endl;
+           cout << regionN[i].buildingN[g].namebuilding << " building" << endl;
 
-       cout << "enter amount floors:";
-       cin >> amount_floor;
+           cout << "enter amount floors:";
+           cin >> amount_floor;
+
           for(int j = 0; j < amount_floor; j ++)
           {
               regionN[i].buildingN[g].floorN.push_back(floor());
               regionN[i].buildingN[g].floorN[j].namefloor = j + 1;
+//              cout << "enter height ceiling: " << j +1 << endl;
+//              cin >> regionN[i].buildingN[g].floorN[j].height_floor;
           }
        }
     }
 
+    for(int i = 0; i < amount_region; i ++)
+    {
+        for(int g = 0; g < amount_building; g ++){
 
+            for(int j = 0; j < amount_floor; j ++) {
+
+                cout << regionN[i].buildingN[g].floorN[j].namefloor << " floor" << endl;
+                cout << "enter amount rooms:";
+                cin >> amount_room;
+
+                for(int k = 0; k < amount_room; k ++){
+
+                    regionN[i].buildingN[g].floorN[j].roomN.push_back(room());
+                    cout << "enter name room:" << k + 1 << endl;
+                    cin >> regionN[i].buildingN[g].floorN[j].roomN[k].nameroom;
+                    cout << "enter size room:" << k + 1 << endl;
+                    cin >> regionN[i].buildingN[g].floorN[j].roomN[k].sizeroom;
+
+                }
+            }
+
+        }
+    }
+
+    for(int i = 0; i < amount_region; i ++){
+
+        cout << "region: " << regionN[i].nameregion << ", ";
+        cout << "size region: " << regionN[i].sizeregion << endl;
+
+        for(int g = 0; g < amount_building; g ++){
+
+            cout << "building: " << regionN[i].buildingN[g].namebuilding << ", ";
+            cout << "size building: " << regionN[i].buildingN[g].sizebuilding << endl;
+
+            for(int j = 0; j < amount_floor; j ++){
+
+                cout << "floors: " << regionN[i].buildingN[g].floorN[j].namefloor << ", ";
+//                cout << "height floor: " << regionN[i].buildingN[g].floorN[j].height_floor << endl;
+
+                for(int k = 0; k < amount_room; k ++){
+
+                    cout << "room: " << regionN[i].buildingN[g].floorN[j].roomN[k].nameroom << ", ";
+                    cout << "size room: " << regionN[i].buildingN[g].floorN[j].roomN[k].sizeroom << endl;
+                }
+            }
+        }
+    }
 
     return 0;
 }

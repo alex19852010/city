@@ -33,9 +33,7 @@ int main() {
     int amount_floor = 0;
     int amount_room = 0;
     vector<region> regionN;
-    vector<building> biuldingN;
-    vector<floor> floorN;
-    vector<room> roomN;
+
 
     cout << "enter amount regions:";
     cin >> amount_region;

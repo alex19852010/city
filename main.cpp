@@ -77,8 +77,8 @@ int main() {
           {
               regionN[i].buildingN[g].floorN.push_back(floor());
               regionN[i].buildingN[g].floorN[j].namefloor = j + 1;
-//              cout << "enter height ceiling: " << j +1 << endl;
-//              cin >> regionN[i].buildingN[g].floorN[j].height_floor;
+              cout << "enter height ceiling: " << j +1 << endl;
+              cin >> regionN[i].buildingN[g].floorN[j].height_floor;
           }
        }
     }
@@ -120,7 +120,7 @@ int main() {
             for(int j = 0; j < amount_floor; j ++){
 
                 cout << "floors: " << regionN[i].buildingN[g].floorN[j].namefloor << ", ";
-//                cout << "height floor: " << regionN[i].buildingN[g].floorN[j].height_floor << endl;
+                cout << "height floor: " << regionN[i].buildingN[g].floorN[j].height_floor << endl;
 
                 for(int k = 0; k < amount_room; k ++){
 
